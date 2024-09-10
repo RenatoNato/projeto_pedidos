@@ -10,9 +10,13 @@ public class OrderService {
     @Autowired
     private ShippingService shippingService;
 
+    //Calcula total do pedido
     public double calculateOrderTotal(Order order) {
 
+        //Calcula valor do desconto. (Realizar a Porcentagem do valor base).
         double discountAmount = order.getBasic() * (order.getDiscount() / 100);
+
+        //Calcula valor com desconto.
         double discountedValue = order.getBasic() - discountAmount;
 
         double shippingCost = shippingService.calculateShippingCost(order.getBasic());

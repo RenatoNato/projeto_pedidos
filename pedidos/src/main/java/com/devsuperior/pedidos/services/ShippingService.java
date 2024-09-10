@@ -5,6 +5,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class ShippingService {
 
+    //Calcula custo de envio
     public double calculateShippingCost(double orderValue){
         if(orderValue < 100.00){
             return 20.00;
